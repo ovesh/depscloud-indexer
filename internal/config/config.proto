@@ -90,8 +90,10 @@ message Static {
     Clone clone = 2;
 }
 
-message Rds {
-    string target = 1;
+message Nexus3 {
+    string base_url = 1;
+
+    repeated string repositories = 3;
 }
 
 message Account {
@@ -100,7 +102,8 @@ message Account {
     Bitbucket bitbucket = 3;
     Generic generic = 4;
     Static static = 5;
-    Rds rds = 6;
+    //Rds rds = 6;
+    Nexus3 nexus3 = 7;
 }
 
 message Configuration {

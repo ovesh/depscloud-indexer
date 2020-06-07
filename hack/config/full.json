@@ -173,6 +173,14 @@
           }
         }
       }
+    },
+    {
+      "nexus3": {
+        "baseUrl": "base_url",
+        "repositories": [
+          "repositories"
+        ]
+      }
     }
   ]
 }

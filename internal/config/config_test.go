@@ -90,15 +90,25 @@ func testBitbucket(t *testing.T, bitbucket *config.Bitbucket) {
 
 func testStatic(t *testing.T, static *config.Static) {
 	require.NotNil(t, static)
-	require.Len(t, static.RepositoryUrls, 1)
 
+	require.Len(t, static.RepositoryUrls, 1)
 	require.Contains(t, static.RepositoryUrls, "repository_urls")
 
 	testClone(t, static.Clone)
 }
 
+func testNexus3(t *testing.T, nexus3 *config.Nexus3) {
+	require.NotNil(t, nexus3)
+
+
+	require.Equal(t, "base_url", nexus3.BaseUrl)
+
+	require.Len(t, nexus3.Repositories, 1)
+	require.Contains(t, nexus3.Repositories, "repositories")
+}
+
 func testCommon(t *testing.T, cfg *config.Configuration) {
-	require.Len(t, cfg.Accounts, 9)
+	require.Len(t, cfg.Accounts, 10)
 
 	{
 		generic := cfg.Accounts[0].GetGeneric()
@@ -149,6 +159,11 @@ func testCommon(t *testing.T, cfg *config.Configuration) {
 	{
 		static := cfg.Accounts[8].GetStatic()
 		testStatic(t, static)
+	}
+
+	{
+		nexus3 := cfg.Accounts[9].GetNexus3()
+		testNexus3(t, nexus3)
 	}
 }
 

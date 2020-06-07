@@ -154,4 +154,10 @@ accounts {
         }
     }
 }
+accounts {
+    nexus3 {
+        base_url: "base_url"
 
+        repositories: "repositories"
+    }
+}

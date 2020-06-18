@@ -104,7 +104,11 @@ func testNexus3(t *testing.T, nexus3 *config.Nexus3) {
 	require.Equal(t, "base_url", nexus3.BaseUrl)
 
 	require.Len(t, nexus3.Repositories, 1)
-	require.Contains(t, nexus3.Repositories, "repositories")
+
+	repository := nexus3.Repositories[0]
+
+	require.Equal(t, repository.Name, "name")
+	require.Contains(t, repository.Groups, "group")
 }
 
 func testCommon(t *testing.T, cfg *config.Configuration) {

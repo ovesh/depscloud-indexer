@@ -116,4 +116,6 @@ accounts:
 - nexus3:
     baseUrl: "base_url"
     repositories:
-      - "repositories"
+      - name: name
+        groups:
+          - group

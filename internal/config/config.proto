@@ -90,10 +90,15 @@ message Static {
     Clone clone = 2;
 }
 
+message Nexus3Repository {
+    string name = 1;
+    repeated string groups = 2;
+}
+
 message Nexus3 {
     string base_url = 1;
 
-    repeated string repositories = 3;
+    repeated Nexus3Repository repositories = 3;
 }
 
 message Account {

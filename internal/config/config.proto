@@ -46,7 +46,7 @@ message Github {
     repeated string organizations = 4;
     CloneStrategy strategy = 5 [deprecated = true];
     Clone clone = 6;
-    repeated string skip_orgs = 7;
+    repeated string skip_organizations = 7;
 
     OAuth2Token oauth2 = 10;
 }

@@ -134,7 +134,7 @@ func (r *githubRemote) FetchRepositories(*FetchRepositoriesRequest) (*FetchRepos
 		}
 	}
 
-	skipOrganizations := set.FromSlice(r.config.SkipOrgs)
+	skipOrganizations := set.FromSlice(r.config.SkipOrganizations)
 	for _, organization := range organizations {
 		if skipOrganizations.Contains(organization) {
 			logrus.Infof("[remotes.github] skipping org %q", organization)
